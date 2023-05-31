@@ -40,12 +40,16 @@ update msg model =
                         Just model.nextPlayer
 
                     else
-                        Nothing
+                        currentCellValue
             in
-            { model
-                | board = setAt cellId newCellValue model.board
-                , nextPlayer = Players.next <| Just model.nextPlayer
-            }
+            if newCellValue == currentCellValue then
+                model
+
+            else
+                { model
+                    | board = setAt cellId newCellValue model.board
+                    , nextPlayer = Players.next <| Just model.nextPlayer
+                }
 
         Reset ->
             init
