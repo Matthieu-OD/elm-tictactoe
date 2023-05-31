@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Silvr x Elm Tutorial§</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="container-fluid">
+    <div id="app"></div>
+
+    <script src="app.js"></script>
+    <script>
+        const element = document.getElementById("app");
+        const app = Elm.App.init({
+            node: element,
+        });
+    </script>
+</body>
+
+</html>
